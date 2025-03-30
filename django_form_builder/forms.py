@@ -171,6 +171,10 @@ class BaseDynamicForm(forms.Form):
                 pre_text = ''
                 if 'pre_text' in custom_field_dict.keys():
                     pre_text = custom_field_dict.pop('pre_text')
+                    
+                widget_attrs = None
+                if 'widget_attrs' in custom_field_dict.keys():
+                    widget_attrs = custom_field_dict.pop('widget_attrs')
 
                 # update field data kwargs
                 data_kwargs.update(custom_field_dict)
@@ -202,6 +206,9 @@ class BaseDynamicForm(forms.Form):
                         # if pre_text is setted add it to form field
                         if pre_text:
                             self.fields[name].pre_text = pre_text
+                        
+                        if widget_attrs:
+                            self.fields[name].widget.attrs.update(widget_attrs)
 
                         # if is a Formset
                         if isinstance(field,

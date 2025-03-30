@@ -1,0 +1,161 @@
+# django-form-builder
+# es
+
+msgid "Text"
+msgstr "Texto"
+
+msgid "E-mail"
+msgstr "Correo electrónico"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "IP Address"
+msgstr "Dirección IP"
+
+msgid "IPv4 address with optional subnet"
+msgstr "Dirección IPv4 con subred opcional"
+
+msgid "Invalid format"
+msgstr "Formato no válido"
+
+msgid "MAC Address"
+msgstr "Dirección MAC"
+
+msgid "Maximum number of selectable options: {}"
+msgstr "Número máximo de opciones seleccionables: {}"
+
+msgid "Attachment (generic)"
+msgstr "Adjunto (genérico)"
+
+msgid "Image Attachment"
+msgstr "Adjunto de imagen"
+
+msgid "Data file attachment (JSON, CSV, Excel)"
+msgstr "Adjunto de archivo de datos (JSON, CSV, Excel)"
+
+msgid "PDF Attachment"
+msgstr "Adjunto PDF"
+
+msgid "Digital signature validation error"
+msgstr "Error de validación de firma digital"
+
+msgid "Signed PDF Attachment"
+msgstr "Adjunto PDF firmado"
+
+msgid "Signed P7M Attachment"
+msgstr "Adjunto P7M firmado"
+
+msgid "Positive integer"
+msgstr "Número entero positivo"
+
+msgid "Only numbers allowed"
+msgstr "Solo se permiten números"
+
+msgid "Positive decimal number"
+msgstr "Número decimal positivo"
+
+msgid "Long text"
+msgstr "Texto largo"
+
+msgid "Checkbox"
+msgstr "Casilla de verificación"
+
+msgid "Multi-value checkbox"
+msgstr "Casilla de verificación múltiple"
+
+msgid "Option list (dropdown)"
+msgstr "Lista de opciones (menú desplegable)"
+
+msgid "Select an option"
+msgstr "Seleccione una opción"
+
+msgid "Option list (radio buttons)"
+msgstr "Lista de opciones (botones de radio)"
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "Date and time (single field)"
+msgstr "Fecha y hora (campo único)"
+
+msgid "Date and Time (separate fields)"
+msgstr "Fecha y Hora (campos separados)"
+
+msgid "{} (Date)"
+msgstr "{} (Fecha)"
+
+msgid "{} (Hours)"
+msgstr "{} (Horas)"
+
+msgid "{} (Minutes)"
+msgstr "{} (Minutos)"
+
+msgid "Start Date and End Date"
+msgstr "Fecha de inicio y Fecha de fin"
+
+msgid "{} (Start Date)"
+msgstr "{} (Fecha de inicio)"
+
+msgid "{} (End Date)"
+msgstr "{} (Fecha de fin)"
+
+msgid "Start date cannot be after end date"
+msgstr "La fecha de inicio no puede ser posterior a la fecha de fin"
+
+msgid "Protocol (type/number/date)"
+msgstr "Protocolo (tipo/número/fecha)"
+
+msgid "{} (Numbering Type)"
+msgstr "{} (Tipo de numeración)"
+
+msgid "Choose if protocol/decree/resolution, to which the numbering refers"
+msgstr "Elija si es protocolo/decreto/resolución, al que se refiere la numeración"
+
+msgid "{} (Protocol/Decree/Resolution Number)"
+msgstr "{} (Número de Protocolo/Decreto/Resolución)"
+
+msgid "Enter the number of the protocol/decree/resolution"
+msgstr "Ingrese el número del protocolo/decreto/resolución"
+
+msgid "{} (Protocol/Decree/Resolution Date)"
+msgstr "{} (Fecha de Protocolo/Decreto/Resolución)"
+
+msgid "Enter the date of the protocol/decree/resolution"
+msgstr "Ingrese la fecha del protocolo/decreto/resolución"
+
+msgid "Missing value"
+msgstr "Valor faltante"
+
+msgid "Protocol date cannot be after today"
+msgstr "La fecha del protocolo no puede ser posterior a hoy"
+
+msgid "Hidden field"
+msgstr "Campo oculto"
+
+msgid "This field requires at least one row"
+msgstr "Este campo requiere al menos una fila"
+
+msgid "Multiple entries"
+msgstr "Entradas múltiples"
+
+msgid "Password"
+msgstr "Contraseña"
+
+msgid "Password is not secure enough, please add more entropy"
+msgstr "La contraseña no es lo suficientemente segura, por favor agregue más entropía"
+
+msgid "Add another one"
+msgstr "Agregar otro"
+
+msgid "Remove this one"
+msgstr "Eliminar este"
+
+msgid "Error in field building"
+msgstr "Error en la construcción del campo"
+
+msgid "The definition of the rows is incorrect"
+msgstr "La definición de las filas es incorrecta"
+
+msgid "Check the naming of the classes and avoid using special characters"
+msgstr "Verifique el nombramiento de las clases y evite usar caracteres especiales" 
