@@ -19,7 +19,7 @@ CLASSIFICATION_LIST = (('protocollo', _('Protocollo')),
 # 100MB 104857600
 # 250MB - 214958080
 # 500MB - 429916160
-MAX_UPLOAD_SIZE = 10485760
+MAX_UPLOAD_SIZE = 214958080
 
 PDF_FILETYPE = ('application/pdf',)
 DATA_FILETYPE = ('text/csv', 'application/json',
@@ -33,10 +33,11 @@ TEXT_FILETYPE = ('text/plain',
                  'application/msword',
                  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
                 )
+VIDEO_FILETYPE = ('video/mp4', 'video/avi', 'video/mov', 'video/wmv', 'video/flv', 'video/webm', 'video/mkv')
 IMG_FILETYPE = ('image/jpeg', 'image/png', 'image/gif', 'image/x-ms-bmp')
 P7M_FILETYPE = ('application/pkcs7-mime',)
 SIGNED_FILETYPE = PDF_FILETYPE + P7M_FILETYPE
-PERMITTED_UPLOAD_FILETYPE = TEXT_FILETYPE + DATA_FILETYPE + SIGNED_FILETYPE + IMG_FILETYPE
+PERMITTED_UPLOAD_FILETYPE = TEXT_FILETYPE + DATA_FILETYPE + SIGNED_FILETYPE + IMG_FILETYPE + VIDEO_FILETYPE
 
 # maximum permitted filename lengh in attachments, uploads
 ATTACH_NAME_MAX_LEN = 50

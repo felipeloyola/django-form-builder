@@ -59,6 +59,7 @@ IMG_FILETYPE = getattr(settings, 'IMG_FILETYPE', IMG_FILETYPE)
 DATA_FILETYPE = getattr(settings, 'DATA_FILETYPE', DATA_FILETYPE)
 PDF_FILETYPE = getattr(settings, 'PDF_FILETYPE', PDF_FILETYPE)
 P7M_FILETYPE = getattr(settings, 'P7M_FILETYPE', P7M_FILETYPE)
+VIDEO_FILETYPE = getattr(settings, 'VIDEO_FILETYPE', VIDEO_FILETYPE)
 CLASSIFICATION_LIST = getattr(settings, 'CLASSIFICATION_LIST', CLASSIFICATION_LIST)
 
 
@@ -254,6 +255,16 @@ class CustomImageField(CustomFileField):
         self.valid_extensions = IMG_FILETYPE
         super().__init__(*args, **data_kwargs)
 
+
+class CustomVideoField(CustomFileField):
+    """
+    FileField
+    """
+    field_type = _("Video Attachment")
+
+    def __init__(self, *args, **data_kwargs):
+        self.valid_extensions = VIDEO_FILETYPE
+        super().__init__(*args, **data_kwargs)
 
 class CustomDataField(CustomFileField):
     """
