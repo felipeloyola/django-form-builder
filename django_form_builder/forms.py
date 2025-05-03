@@ -224,7 +224,8 @@ class BaseDynamicForm(forms.Form):
                                                                       data=kwargs.get('data',{}),
                                                                       files=kwargs.get('files',{}),
                                                                       field_required=field.required,
-                                                                      prefix=name)
+                                                                      prefix=name,
+                                                                      max_num=field.max_num)
                         # else if field isn't a Formset
                         else:
                             # get a custom widget (if user has defined it in its settings file)
