@@ -85,8 +85,7 @@ class FormsetdWidget(forms.Widget):
                                              prefix=self.prefix,
                                              data=self.data,
                                              files=self.files,
-                                             max_num=self.max_num,
-                                             validate_max=True)
+                                             max_num=self.max_num)
                 self.formset.is_valid()
             else:
                 # this initialized the formset as void
@@ -94,8 +93,7 @@ class FormsetdWidget(forms.Widget):
                                              required=field_required,
                                              extra=0,
                                              prefix=self.prefix,
-                                             max_num=self.max_num,
-                                             validate_max=True)
+                                             max_num=self.max_num)
         except:
             # raise Exception('custom message')
             self.formset = None
