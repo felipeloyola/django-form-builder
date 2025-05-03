@@ -740,6 +740,8 @@ class CustomComplexTableField(ChoiceField, BaseCustomField):
 
     def get_formset(self):
         if not self.choices: return
+        print("get_formset")
+        print(self.max_num)
         return build_formset(choices=self.choices, max_num=self.max_num)
 
     def clean(self, *args, **kwargs):
