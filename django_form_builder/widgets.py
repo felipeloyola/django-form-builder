@@ -71,6 +71,7 @@ class FormsetdWidget(forms.Widget):
         init_data_list = ['choices', 'data', 'files']
         field_required = kwargs.pop('field_required')
         self.prefix = kwargs.pop('prefix')
+        self.max_num = kwargs.pop('max_num')
         for i in init_data_list:
             if i in kwargs.keys():
                 setattr(self, i, kwargs.pop(i))
@@ -83,14 +84,16 @@ class FormsetdWidget(forms.Widget):
                                              required=field_required,
                                              prefix=self.prefix,
                                              data=self.data,
-                                             files=self.files)
+                                             files=self.files,
+                                             max_num=self.max_num)
                 self.formset.is_valid()
             else:
                 # this initialized the formset as void
                 self.formset = build_formset(choices=self.choices,
                                              required=field_required,
                                              extra=0,
-                                             prefix=self.prefix)
+                                             prefix=self.prefix,
+                                             max_num=self.max_num)
         except:
             # raise Exception('custom message')
             self.formset = None
