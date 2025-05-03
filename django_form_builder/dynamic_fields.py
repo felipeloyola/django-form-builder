@@ -731,9 +731,11 @@ class CustomComplexTableField(ChoiceField, BaseCustomField):
     choices = None
     
     def __init__(self, *args, **kwargs):
-        print("CustomComplexTableField")
+        print("CustomComplexTableField --")
         print(kwargs)
         self.max_num = kwargs.pop("max_num") if kwargs.get("max_num") else None
+        print(self.max_num)
+        print("CustomComplexTableField --")
         super().__init__(*args, **kwargs)
 
     def get_formset(self):
