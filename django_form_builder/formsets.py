@@ -15,7 +15,7 @@ def get_empty_form(form_class=forms.Form):
     return Dynamic
 
 
-def build_formset(choices, extra=0, required=False, prefix='form', data={}, files={}):
+def build_formset(choices, extra=0, required=False, prefix='form', data={}, files={}, max_num=None):
     """ Get formset
     """
     _regexp = '(?P<colname>[a-zA-Z0-9À-ÿ\'\"\_ ]*)\((?P<coldict>[\{\}\.0-9a-zA-ZÀ-ÿ\'\"\:\;\_\,\s\- ]*)\)'
@@ -56,7 +56,7 @@ def build_formset(choices, extra=0, required=False, prefix='form', data={}, file
         eform.declared_fields[colname] = custom_field
 
     # Django formset
-    fac =  forms.formset_factory(eform, extra=extra, min_num=min_num)
+    fac =  forms.formset_factory(eform, extra=extra, min_num=min_num, max_num=max_num)
     if data:
         return fac(prefix=prefix, data=data, files=files)
     return fac(prefix=prefix)
