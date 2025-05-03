@@ -56,7 +56,7 @@ def build_formset(choices, extra=0, required=False, prefix='form', data={}, file
         eform.declared_fields[colname] = custom_field
 
     # Django formset
-    fac =  forms.formset_factory(eform, extra=extra, min_num=min_num, max_num=max_num)
+    fac =  forms.formset_factory(eform, extra=extra, min_num=min_num, max_num=max_num, validate_max=(True if max_num else False))
     if data:
         return fac(prefix=prefix, data=data, files=files)
     return fac(prefix=prefix)
