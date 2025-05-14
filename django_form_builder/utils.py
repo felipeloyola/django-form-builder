@@ -42,18 +42,53 @@ def get_formset_labeled_errors(formset_errors):
 
 def _split_choices(choices_string):
     """
-    Riceve una stringa e la splitta ogni ';'
-    creando una tupla di scelte
+    Receives a string and splits it by ';'
+    creating a tuple of choices
     """
     str_split = choices_string.split(';')
     choices = tuple((x, x) for x in str_split)
     return choices
 
+def _split_choices_and_attributes(choice_string):
+    """
+    Splits a string like:
+        "value=a|label=Opcion A|info=extra data;value=b|label=Opcion B|info=extra data b"
+    Into:
+        choices = [('a', 'Opcion A'), ('b', 'Opcion B')]
+        option_attributes = {
+            'a': {'info': 'extra data'},
+            'b': {'info': 'extra data b'}
+        }
+    """
+    choices = []
+    option_attributes = {}
+
+    for item in choice_string.split(';'):
+        parts = item.split('|')
+        data = {}
+        value = label = None
+
+        for part in parts:
+            key, sep, val = part.partition('=')
+            if sep:
+                if key == 'value':
+                    value = val
+                elif key == 'label':
+                    label = val
+                else:
+                    data[key] = val
+
+        if value and label:
+            choices.append((value, label))
+            option_attributes[value] = data
+
+    return choices, option_attributes
+
 
 def _split_choices_in_list(choices_string):
     """
-    Riceve una stringa e la splitta ogni ';'
-    creando una lista di scelte
+    Receives a string and splits it by ';'
+    creating a list of choices
     """
     str_split = choices_string.split(';')
     return str_split
@@ -61,8 +96,8 @@ def _split_choices_in_list(choices_string):
 
 def _split_choices_in_list_canc(choices_string):
     """
-    Riceve una stringa e la splitta ogni '#'
-    creando una lista di scelte
+    Receives a string and splits it by '#'
+    creating a list of choices
     """
     str_split = choices_string.split('#')
     return str_split
@@ -70,7 +105,7 @@ def _split_choices_in_list_canc(choices_string):
 
 def _successivo_ad_oggi(data_da_valutare):
     """
-    Ci dice se una data è successiva alla data di oggi
+    Tells us if a date is after today's date
     """
     oggi = timezone.localdate()
     if data_da_valutare:

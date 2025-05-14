@@ -28,10 +28,13 @@ from . widgets import *
 from . settings import *
 from . utils import (format_field_name,
                      _split_choices,
+                     _split_choices_and_attributes,
                      _split_choices_in_list_canc,
                      _successivo_ad_oggi)
 
 logger = logging.getLogger(__name__)
+
+
 
 get_signatures = None
 try:
@@ -172,6 +175,25 @@ class CustomChoiceField(ChoiceField, BaseCustomField):
         if choices:
             # split string into separate choices
             self.choices += _split_choices(choices)
+
+class CustomSelectWithOptionAttrs(ChoiceField, BaseCustomField):
+    """
+    Select with option attributes
+    """
+    field_type = _("Select with option attributes")
+
+    def __init__(self, *args, **data_kwargs):
+        super().__init__(*args, **data_kwargs)
+        self.widget = SelectWithOptionAttrs()
+        self.option_attributes = data_kwargs.get('option_attributes', {})
+        self.choices = [('', _('Select an option')),]
+
+
+    def define_value(self, choices, **kwargs):
+        if choices:
+            split_choices, option_attrs = _split_choices_and_attributes(choices)
+            self.choices += split_choices
+            self.widget.option_attributes = option_attrs
 
 class CustomMultiChoiceField(MultipleChoiceField, BaseCustomField):
     """

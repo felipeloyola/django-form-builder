@@ -5,6 +5,8 @@ from django import forms
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
+from django.forms import Select
+
 
 from . captcha import get_captcha
 from . enc import encrypt, decrypt
@@ -130,3 +132,16 @@ class FormsetdWidget(forms.Widget):
                 widget = field.widget
                 widget.attrs[attr] = True
         return True
+
+
+class SelectWithOptionAttrs(Select):
+    def __init__(self, *args, **kwargs):
+        self.option_attributes = kwargs.pop('option_attributes', {})
+        super().__init__(*args, **kwargs)
+
+    def create_option(self, name, value, label, selected, index, subindex=None, attrs=None):
+        option = super().create_option(name, value, label, selected, index, subindex=subindex, attrs=attrs)
+        # Inject custom attributes if they exist
+        if value in self.option_attributes:
+            option['attrs'].update(self.option_attributes[value])
+        return option
