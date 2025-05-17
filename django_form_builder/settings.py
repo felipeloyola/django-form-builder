@@ -1,15 +1,15 @@
 from django.utils.translation import gettext_lazy as _
 
 
-CLASSIFICATION_LIST = (('protocollo', _('Protocollo')),
-                       ('decreto_rettorale', _('Decreto Rettorale (D.R.)')),
-                       ('decreto_direttore_generale', _('Decreto del Direttore Generale (D.D.G.)')),
-                       ('decreto_dirigente_struttura', _('Decreto del Direttore Dipartimento o Dirigente Struttura')),
-                       ('decreto_direttore_cr', _('Decreto del Direttore del Centro Residenziale (D.CR.)')),
-                       ('decreto_prorettore', _('Decreto del Prorettore (Centro Residenziale)')),
-                       ('delibera_dipartimento_facolta', _('Delibera di Dipartimento/Facoltà')),
-                       ('delibera_senato', _('Delibera del Senato')),
-                       ('delibera_cda', _('Delibera del C.D.A.')))
+CLASSIFICATION_LIST = (('protocollo', _('Protocol')),
+                       ('decreto_rettorale', _('Rector\'s Decree (R.D.)')),
+                       ('decreto_direttore_generale', _('General Director\'s Decree (G.D.D.)')),
+                       ('decreto_dirigente_struttura', _('Department Director or Structure Manager\'s Decree')),
+                       ('decreto_direttore_cr', _('Residential Center Director\'s Decree (R.C.D.)')),
+                       ('decreto_prorettore', _('Pro-Rector\'s Decree (Residential Center)')),
+                       ('delibera_dipartimento_facolta', _('Department/Faculty Resolution')),
+                       ('delibera_senato', _('Senate Resolution')),
+                       ('delibera_cda', _('Board of Directors Resolution')))
 
 # 2.5MB - 2621440
 # 5MB - 5242880
@@ -45,13 +45,13 @@ ATTACH_NAME_MAX_LEN = 50
 ATTACHMENTS_DICT_PREFIX = "allegati"
 
 # attachments validation messages
-WRONG_TYPE = _("Per favore esegui l'upload di soli file "
+WRONG_TYPE = _("Please upload only files "
                "in {}. "
-               "Attualmente questo è '{}'")
-WRONG_SIZE = _("Per favore mantieni la dimensione del file entro {}. "
-               "Attualmente questo è {}")
-WRONG_LENGTH = _("Per favore usa una lunghezza massima del nome dell'allegato "
-                 "inferiore a {}. Attualmente hai inserito un nome di {} caratteri")
+               "Currently this is '{}'")
+WRONG_SIZE = _("Please keep the file size within {}. "
+               "Currently this is {}")
+WRONG_LENGTH = _("Please use an attachment name length "
+                 "less than {}. Currently you have entered a name of {} characters")
 
 # formset special words
 FORMSET_REGEX = "^(?P<field_name>{})-(?P<index>[0-9]+)-(?P<name>[a-zA-ZÀ-ÿ0-9_°^\-\'\"]+)$"
@@ -62,6 +62,8 @@ MANAGEMENT_FORMSET_STRINGS = [FORMSET_TEMPLATE_NAMEID,
                               '-TOTAL_FORMS', '-INITIAL_FORMS',
                               '-MAX_NUM_FORMS','-MIN_NUM_FORMS']
 
-CAPTCHA_DEFAULT_LANG = 'en'
+CAPTCHA_DEFAULT_LANG = 'es'
 CAPTCHA_EXPIRATION_TIME = 120000 # milliseconds
 CUSTOM_WIDGETS_IN_FORMSETS = True
+
+LANGUAGE_CODE = "es"

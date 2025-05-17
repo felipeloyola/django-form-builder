@@ -8,3 +8,5 @@ build/*
 *.egg-info/
 example/db.sqlite3
 .tox/*
+
+.DS_Store

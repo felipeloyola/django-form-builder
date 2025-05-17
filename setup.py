@@ -16,7 +16,6 @@ setup(
     name='django-form-builder',
     version='1.2.1',
     packages=find_packages(),
-    package_data={'': ['*.wav']},
     data_files=[
         ('', glob('django_form_builder/data/audio_captcha/*/default.wav', recursive=True)),
     ],
