@@ -430,6 +430,20 @@ class CustomSelectBoxField(CustomChoiceField):
         super().__init__(*args, **data_kwargs)
         self.choices = [('', _('Select an option')),]
 
+class CustomRangeSelectBoxField(CustomChoiceField):
+    """
+    RangeSelectBox
+    """
+    field_type = _("Range SelectBox")
+    
+    def define_value(self, from_range, to_range, step, use_empty_option=True, **kwargs):
+        self.from_range = from_range
+        self.to_range = to_range
+        self.step = step
+        self.choices = [(i, i) for i in range(self.from_range, self.to_range, self.step)]
+        if use_empty_option:
+            self.choices.insert(0, ('', _('Select an option')))
+
 
 class CustomRadioBoxField(CustomChoiceField):
     """
