@@ -168,4 +168,40 @@ msgid "The definition of the rows is incorrect"
 msgstr "La definición de las filas es incorrecta"
 
 msgid "Check the naming of the classes and avoid using special characters"
-msgstr "Verifique el nombramiento de las clases y evite usar caracteres especiales" 
+msgstr "Verifique el nombramiento de las clases y evite usar caracteres especiales"
+
+msgid "Protocol"
+msgstr "Protocolo"
+
+msgid "Rector's Decree (R.D.)"
+msgstr "Decreto del Rector (D.R.)"
+
+msgid "General Director's Decree (G.D.D.)"
+msgstr "Decreto del Director General (D.D.G.)"
+
+msgid "Department Director or Structure Manager's Decree"
+msgstr "Decreto del Director de Departamento o Gerente de Estructura"
+
+msgid "Residential Center Director's Decree (R.C.D.)"
+msgstr "Decreto del Director del Centro Residencial (D.C.R.)"
+
+msgid "Pro-Rector's Decree (Residential Center)"
+msgstr "Decreto del Pro-Rector (Centro Residencial)"
+
+msgid "Department/Faculty Resolution"
+msgstr "Resolución de Departamento/Facultad"
+
+msgid "Senate Resolution"
+msgstr "Resolución del Senado"
+
+msgid "Board of Directors Resolution"
+msgstr "Resolución del Consejo de Administración"
+
+msgid "Please upload only files in {}. Currently this is '{}'"
+msgstr "Por favor, suba solo archivos en {}. Actualmente es '{}'"
+
+msgid "Please keep the file size within {}. Currently this is {}"
+msgstr "Por favor, mantenga el tamaño del archivo dentro de {}. Actualmente es {}"
+
+msgid "Please use an attachment name length less than {}. Currently you have entered a name of {} characters"
+msgstr "Por favor, use un nombre de adjunto con menos de {} caracteres. Actualmente ha ingresado un nombre de {} caracteres" 
