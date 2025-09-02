@@ -251,10 +251,11 @@ class CustomFileField(FileField, BaseCustomField):
             max_upload_size = MAX_UPLOAD_SIZE
             attach_max_len = ATTACH_NAME_MAX_LEN
 
-            if data.content_type not in permitted_upload_filetype:
-                msg_tmpl = WRONG_TYPE
-                msg = msg_tmpl.format(permitted_upload_filetype, data.content_type)
-            elif data.size > int(max_upload_size):
+            #if data.content_type not in permitted_upload_filetype:
+            #    msg_tmpl = WRONG_TYPE
+            #    msg = msg_tmpl.format(permitted_upload_filetype, data.content_type)
+            #elif data.size > int(max_upload_size):
+            if data.size > int(max_upload_size):
                 msg_tmpl = WRONG_SIZE
                 msg = msg_tmpl.format(filesizeformat(max_upload_size),
                                       filesizeformat(data.size))
