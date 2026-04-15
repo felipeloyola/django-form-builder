@@ -286,8 +286,11 @@ class CustomVideoField(CustomFileField):
     field_type = _("Video Attachment")
 
     def __init__(self, *args, **data_kwargs):
+        template_name = data_kwargs.pop('template_name', None)
         self.valid_extensions = VIDEO_FILETYPE
         super().__init__(*args, **data_kwargs)
+        if hasattr(self.widget, 'template_name'):
+            self.widget.template_name = template_name or "django_form_builder/widgets/video.html"
 
 class CustomDataField(CustomFileField):
     """
