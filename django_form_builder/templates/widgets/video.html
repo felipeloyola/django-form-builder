@@ -1,31 +1,5 @@
 {# Custom widget template for CustomVideoField. #}
 
-Is initial: {{ widget.is_initial }}
-
-{% if widget.is_initial %}
-<div class="django-form-builder-video-initial">
-  {{ widget.initial_text }}:
-  {% if widget.value and widget.value.url %}
-  <a href="{{ widget.value.url }}">{{ widget.value }}</a>
-  <div style="margin-top: 0.5rem;">
-    <video controls style="max-width: 100%; height: auto;">
-      <source src="{{ widget.value.url }}">
-    </video>
-  </div>
-  {% else %}
-  {{ widget.value }}
-  {% endif %}
-
-  {% if not widget.required %}
-  <div style="margin-top: 0.25rem;">
-    <input type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}" {% if widget.attrs.disabled
-      %}disabled{% endif %}>
-    <label for="{{ widget.checkbox_id }}">{{ widget.clear_checkbox_label }}</label>
-  </div>
-  {% endif %}
-</div>
-{% endif %}
-
 <div class="django-form-builder-video-input" {% if widget.is_initial %}style="margin-top: 0.5rem;" {% endif %}>
 
   <label {% if widget.attrs.id %}for="{{ widget.attrs.id }}" {% endif %} style="display: block; margin-bottom: 0.5rem;">
@@ -35,8 +9,7 @@ Is initial: {{ widget.is_initial }}
   <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
     <div class="file is-normal has-name">
       <label class="file-label">
-        <input class="file-input" type="file" name="{{ widget.name }}" accept="video/*" {%
-          include "django/forms/widgets/attrs.html" %} />
+        <input class="file-input" type="file" name="{{ widget.name }}" accept="video/*" {% include "django/forms/widgets/attrs.html" %} />
         <span class="file-cta">
           <span class="file-icon">
             <i class="fas fa-upload"></i>
