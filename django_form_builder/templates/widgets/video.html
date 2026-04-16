@@ -1,12 +1,8 @@
 {# Custom widget template for CustomVideoField. #}
 
-<div class="django-form-builder-video-input" {% if widget.is_initial %}style="margin-top: 0.5rem;" {% endif %}>
-
-  <label {% if widget.attrs.id %}for="{{ widget.attrs.id }}" {% endif %} style="display: block; margin-bottom: 0.5rem;">
-    {{ widget.input_text }}:
-  </label>
-
-  <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+<div class="columns">
+  <!-- File input -->
+  <div class="column">
     <div class="file is-normal has-name">
       <label class="file-label">
         <input class="file-input" type="file" name="{{ widget.name }}" accept="video/*" {% include "django/forms/widgets/attrs.html" %} />
@@ -14,12 +10,16 @@
           <span class="file-icon">
             <i class="fas fa-upload"></i>
           </span>
-          <span class="file-label"> Selecciona un archivo… </span>
+          <span class="file-label"> Seleccionar </span>
         </span>
-        <span class="file-name"> {% if widget.is_initial %} {{ widget.value.name }} {% else %} Sin archivo {% endif %} </span>
+        <span class="file-name"> {% if widget.is_initial %} {{ widget.value.name }} {% else %} Sin archivo {% endif %}
+        </span>
       </label>
     </div>
+  </div>
 
+  <!-- Progress bar -->
+  <div class="column">
     <div class="field" style="max-width: 340px;">
       <div class="control">
         <progress class="progress is-info" id="progressBar" value="0" max="100"
@@ -27,5 +27,5 @@
       </div>
       <span id="progressText" style="font-size: 0.95em;">0%</span>
     </div>
-
   </div>
+</div>
