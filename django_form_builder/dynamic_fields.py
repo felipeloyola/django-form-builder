@@ -279,7 +279,7 @@ class CustomImageField(CustomFileField):
         super().__init__(*args, **data_kwargs)
 
 
-class CustomVideoField(CustomFileField):
+class CustomVideoField(CustomCharField):
     """
     FileField
     """
