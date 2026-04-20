@@ -27,4 +27,14 @@
       <span class="progress-text" style="font-size: 0.95em;">0%</span>
     </div>
   </div>
+
+  {% if widget.attrs.file_url %}
+  <div class="column">
+    <div class="field">
+      <video src="{{ widget.attrs.file_url }}" controls {% if widget.attrs.poster %} poster="{{ widget.attrs.poster }}" {% endif %} width="100%">
+        <source src="{{ widget.attrs.file_url }}" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  {% endif %}
 </div>
