@@ -49,8 +49,8 @@
     </div>
   </div>
 
-  {% if widget.attrs.file_url %}
-    <div class="video-preview-wrapper">
+  <div class="video-preview-wrapper">
+      {% if widget.attrs.file_url %}
       <video
         src="{{ widget.attrs.file_url }}"
         controls
@@ -59,7 +59,7 @@
       >
         <source src="{{ widget.attrs.file_url }}" type="video/mp4">
       </video>
+      {% endif %}
     </div>
-  {% endif %}
 
 </div>
