@@ -1,40 +1,65 @@
 {# Custom widget template for CustomVideoField. #}
 
-<div class="columns video-upload-container">
-  <!-- File input -->
-  <div class="column">
-    <div class="file is-normal has-name">
-      <label class="file-label">
-        <input class="file-input" type="file" name="{{ widget.name }}" accept="video/*" {% include "django/forms/widgets/attrs.html" %} />
-        <span class="file-cta">
-          <span class="file-icon">
-            <i class="fas fa-upload"></i>
-          </span>
-          <span class="file-label">Seleccionar</span>
-        </span>
-        <span class="file-name">{% if widget.attrs.file_name %} {{ widget.attrs.file_name }} {% else %} Sin archivo {% endif %}</span>
-      </label>
-    </div>
-  </div>
+<div class="video-upload-container">
 
-  <!-- Progress bar -->
-  <div class="column">
-    <div class="field" style="max-width: 340px;">
-      <div class="control">
-        <progress class="progress is-info progress-bar" value="0" max="100"
-          style="width: 100%; margin-bottom: 0;">0%</progress>
+  <div class="columns is-vcentered">
+    <!-- File input -->
+    <div class="column">
+      <div class="file is-normal has-name is-fullwidth">
+        <label class="file-label">
+          <input
+            class="file-input"
+            type="file"
+            name="{{ widget.name }}"
+            accept="video/*"
+            {% include "django/forms/widgets/attrs.html" %}
+          />
+
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fas fa-upload"></i>
+            </span>
+            <span class="file-label">Seleccionar</span>
+          </span>
+
+          <span class="file-name">
+            {% if widget.attrs.file_name %}
+              {{ widget.attrs.file_name }}
+            {% else %}
+              Sin archivo
+            {% endif %}
+          </span>
+        </label>
       </div>
-      <span class="progress-text" style="font-size: 0.95em;">0%</span>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="column">
+      <div class="field">
+        <div class="control">
+          <progress
+            class="progress is-info progress-bar"
+            value="0"
+            max="100"
+            style="width: 100%; margin-bottom: 0;"
+          >0%</progress>
+        </div>
+        <span class="progress-text" style="font-size: 0.95em;">0%</span>
+      </div>
     </div>
   </div>
 
   {% if widget.attrs.file_url %}
-  <div class="column is-full">
-    <div class="field">
-      <video src="{{ widget.attrs.file_url }}" controls {% if widget.attrs.poster %} poster="{{ widget.attrs.poster }}" {% endif %} width="100%">
+    <div class="video-preview-wrapper">
+      <video
+        src="{{ widget.attrs.file_url }}"
+        controls
+        {% if widget.attrs.poster %} poster="{{ widget.attrs.poster }}" {% endif %}
+        width="100%"
+      >
         <source src="{{ widget.attrs.file_url }}" type="video/mp4">
       </video>
     </div>
-  </div>
   {% endif %}
+
 </div>
